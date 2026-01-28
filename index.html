@@ -3,255 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Elettricista Roma Sud | Pronto Intervento Urgente 24/7</title>
+    <title>Elettricista Roma Sud - Pronto Intervento Urgente</title>
 
-    <meta name="description" content="Elettricista Roma Sud pronto intervento. Salvavita scatta? Cortocircuito? Arriviamo in 40 minuti. Diagnosi guasto a 30€. Chiama ora!">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "DomusTech Roma",
-      "telephone": "+393505223388",
-      "priceRange": "$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Roma",
-        "addressRegion": "RM",
-        "areaServed": ["EUR", "Ostia", "Acilia", "Torrino", "Fiumicino"]
-      }
-    }
-    </script>
+    <meta name="description" content="Elettricista Roma Sud pronto intervento. Arrivo in 40 minuti per guasti, salvavita e blackout. Diagnosi a 30€. Chiama ora!">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #2563eb;
-            --accent: #facc15;
-            --danger: #ef4444;
-            --success: #22c55e;
-            --dark: #020617;
-            --card-bg: #1e293b;
+            --primary: #1e40af; /* Blu Professionale */
+            --accent: #fbbf24;  /* Giallo Attenzione */
+            --danger: #dc2626;  /* Rosso Emergenza */
+            --success: #16a34a; /* Verde WhatsApp */
+            --bg: #f8fafc;      /* Sfondo Chiaro */
+            --text: #1e293b;    /* Testo Scuro */
         }
 
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--dark); color: #f8fafc; line-height: 1.5; }
+        body { margin: 0; font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); line-height: 1.4; }
 
-        /* Header di Emergenza */
-        header { background: var(--danger); color: white; padding: 10px; text-align: center; font-weight: 800; font-size: 14px; position: sticky; top: 0; z-index: 1000; letter-spacing: 1px; }
+        /* Banner d'urgenza */
+        .top-banner { background: var(--danger); color: white; text-align: center; padding: 10px; font-weight: 800; font-size: 14px; position: sticky; top: 0; z-index: 1000; }
 
-        /* Hero: Immagine Protagonista */
-        .hero { 
-            position: relative;
-            background: linear-gradient(rgba(2, 6, 23, 0.5), rgba(2, 6, 23, 0.8)), url('hero-shelly.jpg');
-            background-size: cover; background-position: center;
-            padding: 60px 20px; text-align: center;
-            border-bottom: 4px solid var(--accent);
+        /* Hero Section - Foto Chiara e Visibile */
+        .hero { background: white; padding: 30px 20px; text-align: center; border-bottom: 5px solid var(--accent); }
+        .hero-img { 
+            width: 100%; 
+            max-width: 600px; 
+            height: auto; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            margin-bottom: 25px; 
+            border: 4px solid #fff;
+            outline: 1px solid #e2e8f0;
         }
-        .hero h2 { font-size: 2.2rem; margin: 0; color: var(--accent); line-height: 1.1; }
-        .hero p { font-size: 1.1rem; margin: 15px 0 25px; font-weight: 600; color: #cbd5e1; }
+        .hero h1 { font-size: 2rem; margin: 0; color: var(--primary); line-height: 1.1; font-weight: 800; }
+        .hero p { font-size: 1.1rem; margin: 15px 0 25px; color: #475569; font-weight: 600; }
 
-        /* Pulsanti d'Azione Giganti */
-        .cta-box { display: grid; gap: 15px; max-width: 450px; margin: 0 auto; }
-        .btn { padding: 20px; border-radius: 15px; text-decoration: none; font-weight: 800; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.2s; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-        .btn-call { background: var(--primary); color: white; animation: pulse 2s infinite; }
-        .btn-wa { background: var(--success); color: #022c22; }
+        /* Pulsanti d'azione */
+        .cta-container { display: grid; gap: 15px; max-width: 450px; margin: 0 auto; }
+        .btn { padding: 18px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.2s; border: none; }
+        .btn-call { background: var(--primary); color: white; box-shadow: 0 8px 20px rgba(30,64,175,0.3); }
+        .btn-wa { background: var(--success); color: white; box-shadow: 0 8px 20px rgba(22,163,74,0.3); }
+        .btn:active { transform: scale(0.96); }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
+        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
 
-        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        /* Servizi */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .feat-item { background: white; padding: 20px; border-radius: 15px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .feat-item strong { color: var(--primary); }
 
-        /* Griglia Problemi */
-        .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 30px 0; }
-        .prob-item { background: var(--card-bg); padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary); display: flex; align-items: center; gap: 15px; }
-        .prob-item strong { color: var(--accent); font-size: 1.1rem; }
-
-        /* Prezzo Chiaro */
-        .price-card { background: var(--accent); color: var(--dark); padding: 30px; border-radius: 20px; text-align: center; margin: 40px 0; }
-        .price-card h3 { margin: 0; font-size: 1.8rem; }
-        .price-card p { font-weight: 700; margin: 10px 0 0; font-size: 1.1rem; }
+        /* Box Prezzo Chiaro */
+        .price-box { background: var(--accent); padding: 30px; border-radius: 20px; text-align: center; margin: 40px 0; box-shadow: 0 10px 20px rgba(251,191,36,0.2); }
+        .price-box h2 { margin: 0; font-size: 1.8rem; color: #000; }
+        .price-box p { font-weight: 600; margin: 10px 0 0; color: #000; opacity: 0.8; }
 
         /* Recensioni */
-        .reviews { margin-top: 40px; }
-        .rev-card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; margin-bottom: 15px; font-style: italic; border: 1px solid rgba(255,255,255,0.1); }
-        .rev-card span { display: block; margin-top: 10px; font-weight: 700; color: var(--accent); font-style: normal; }
+        .review-card { background: white; padding: 20px; border-radius: 15px; margin-bottom: 15px; border: 1px solid #e2e8f0; border-left: 5px solid var(--accent); }
+        .rev-name { font-weight: 800; color: var(--primary); font-size: 0.9rem; display: block; margin-top: 10px; }
 
-        /* Footer Sticky per Conversione */
-        .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; display: flex; padding: 10px; gap: 10px; box-shadow: 0 -5px 20px rgba(0,0,0,0.3); z-index: 2000; }
-        .s-btn { flex: 1; padding: 15px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: 800; font-size: 0.9rem; }
+        /* Sticky Bar per Mobile */
+        .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; display: flex; padding: 12px; gap: 10px; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); z-index: 2000; }
+        .s-btn { flex: 1; padding: 16px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: 800; font-size: 0.9rem; color: white; }
 
-        footer { text-align: center; padding: 40px 20px 120px; background: #020617; color: #64748b; font-size: 0.8rem; }
+        footer { text-align: center; padding: 40px 20px 120px; background: #fff; border-top: 1px solid #eee; color: #94a3b8; font-size: 0.8rem; }
 
-        @media (max-width: 768px) {
-            .hero h2 { font-size: 1.8rem; }
-            .hero { padding: 40px 15px; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.7rem; }
+            .hero-img { margin-bottom: 20px; }
         }
+        @media (min-width: 601px) { .sticky-bar { display: none; } }
     </style>
 </head>
 <body>
 
-<header>🔴 PRONTO INTERVENTO ATTIVO A ROMA SUD</header>
+<div class="top-banner">🔴 PRONTO INTERVENTO: Arrivo in 40 minuti</div>
 
 <section class="hero">
+    <img src="hero-shelly.jpg" class="hero-img" alt="Elettricista Roma Sud Urgente">
+    
     <div class="hero-content">
-        <h2>Salvavita scatta? <br><span>Blackout improvviso?</span></h2>
-        <p>Arriviamo in 40 minuti per risolvere il tuo guasto elettrico.</p>
+        <h1>Guasto Elettrico?<br><span>Risolviamo Ora.</span></h1>
+        <p>Tecnico specializzato a Roma Sud. Rapido, serio e pulito.</p>
         
-        <div class="cta-box">
-            <a href="tel:+393505223388" class="btn btn-call">📞 CHIAMA ORA: 350 522 3388</a>
-            <a href="https://wa.me/393505223388?text=EMERGENZA:%20Ho%20un%20guasto%20elettrico%20a..." class="btn btn-wa">💬 WHATSAPP (Risposta Live)</a>
+        <div class="cta-container">
+            <a href="tel:+393505223388" class="btn btn-call">📞 CHIAMA IL TECNICO</a>
+            <a href="https://wa.me/393505223388?text=EMERGENZA%20ELETTRICA:%20Ho%20bisogno%20di%20aiuto%20a..." class="btn btn-wa">💬 WHATSAPP (Subito)</a>
         </div>
     </div>
 </section>
 
 <div class="container">
     
-    <h3 style="text-align:center; color: var(--accent);">Perché chiamare DomusTech?</h3>
-    <div class="problem-grid">
-        <div class="prob-item">⚡ <strong>Guasti Urgenti</strong>: Risolviamo cortocircuiti e blackout in giornata.</div>
-        <div class="prob-item">🔌 <strong>Prese & Luci</strong>: Riparazione immediata di prese bruciate o luci guaste.</div>
-        <div class="prob-item">🛠️ <strong>Salvavita</strong>: Diagnosi rapida se l'interruttore non sta più su.</div>
-        <div class="prob-item">📍 <strong>Zone</strong>: EUR, Ostia, Acilia, Laurentina, Fiumicino e limitrofe.</div>
+    <div class="features">
+        <div class="feat-item">⚡ <strong>Salvavita</strong>: Individuiamo subito perché scatta.</div>
+        <div class="feat-item">🔌 <strong>Prese & Luci</strong>: Riparazione immediata cortocircuiti.</div>
+        <div class="feat-item">🏢 <strong>Interventi 24h</strong>: Operativi anche nei festivi e la sera.</div>
+        <div class="feat-item">📍 <strong>Zona Sud</strong>: EUR, Ostia, Acilia, Laurentina, Fiumicino.</div>
     </div>
 
-    <div class="price-card">
-        <h3>Diagnosi Guasto: 30€</h3>
-        <p>Arrivo in loco + individuazione del problema. <br>Poi decidi tu se procedere con la riparazione.</p>
+    <div class="price-box">
+        <h2>Diagnosi del Guasto: 30€</h2>
+        <p>Arrivo in loco + ricerca professionale del problema. <br>Nessuna sorpresa sul prezzo finale.</p>
     </div>
 
-    <div class="reviews">
-        <h3 style="text-align:center;">Dicono di noi ⭐⭐⭐⭐⭐</h3>
-        <div class="rev-card">
-            "Cortocircuito in cucina di sabato sera. Arrivato in mezz'ora e ha sistemato tutto. Prezzo onesto."
-            <span>- Marco, EUR</span>
-        </div>
-        <div class="rev-card">
-            "Tecnico molto serio, non come quelli che ti chiedono 100€ solo per guardare. Consigliatissimo."
-            <span>- Laura, Ostia</span>
-        </div>
-        <div class="rev-card">
-            "Il salvavita scattava sempre. Individuato il cavo guasto subito. Molto competente."
-            <span>- Paolo, Acilia</span>
-        </div>
+    <h3 style="text-align:center;">Cosa dicono di noi</h3>
+    <div class="review-card">
+        "Il salvavita scattava sempre. Marco è arrivato in mezz'ora e ha trovato il cavo difettoso. Prezzo onesto!"
+        <span class="rev-name">- Paolo, EUR</span>
+    </div>
+    <div class="review-card">
+        "Professionalità e cortesia. Mi ha salvato il frigo di sabato sera. Consigliatissimo."
+        <span class="rev-name">- Laura, Ostia</span>
     </div>
 
 </div>
 
 <footer>
     <strong>DOMUSTECH ROMA SUD</strong><br>
-    Interventi professionali occasionali a domicilio.<br>
-    Zona operativa: EUR • Ostia • Acilia • Infernetto • Torrino
+    Tel: 350 522 3388 | Email: domustech.roma@gmail.com<br>
+    Interventi professionali occasionali a domicilio.
 </footer>
 
 <div class="sticky-bar">
-    <a href="tel:+393505223388" class="s-btn" style="background:var(--primary); color: #fff;">CHIAMA ORA</a>
-    <a href="https://wa.me/393505223388?text=EMERGENZA:%20Guasto%20Elettrico" class="s-btn" style="background:var(--success); color: #022c22;">WHATSAPP</a>
+    <a href="tel:+393505223388" class="s-btn" style="background:var(--primary)">CHIAMA SUBITO</a>
+    <a href="https://wa.me/393505223388" class="s-btn" style="background:var(--success)">WHATSAPP</a>
 </div>
 
-</body>
-</html>
-.hero p{font-size:16px;color:#e5e7eb;}
-
-.btn{display:block;width:95%;max-width:420px;margin:12px auto;padding:16px;border-radius:12px;text-align:center;font-size:18px;text-decoration:none;font-weight:bold;}
-.call{background:#2563eb;color:#fff;}
-.whatsapp{background:#22c55e;color:#022c22;}
-.preventivo{background:#f97316;color:#fff;}
-
-section{padding:22px;text-align:center;}
-ul{list-style:none;padding:0;font-size:17px;}
-li{margin:8px 0;}
-
-.zone{font-size:14px;color:#94a3b8;margin-top:10px;}
-
-.review{background:#111827;padding:12px;border-radius:12px;margin:8px 0;border-left:4px solid #f97316;font-size:14px;}
-
-footer{background:#020617;text-align:center;padding:15px;font-size:12px;color:#64748b;}
-
-.fixed-wa{
-position:fixed;
-bottom:15px;
-right:15px;
-background:#22c55e;
-color:#022c22;
-padding:14px 22px;
-border-radius:50px;
-font-weight:bold;
-text-decoration:none;
-box-shadow:0 6px 20px rgba(0,0,0,0.4);
-z-index:9999;
-}
-
-.fixed-call{
-position:fixed;
-bottom:15px;
-left:15px;
-background:#2563eb;
-color:white;
-padding:14px 22px;
-border-radius:50px;
-font-weight:bold;
-text-decoration:none;
-box-shadow:0 6px 20px rgba(0,0,0,0.4);
-z-index:9999;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>ELETTRICISTA ROMA SUD – PRONTO INTERVENTO</h1>
-<p>⚡ Guasti elettrici urgenti • Salvavita • Prese • Luci • Cortocircuiti</p>
-</header>
-
-<div class="hero">
-<h2>⚠ Hai un guasto elettrico urgente?</h2>
-<p>Intervento rapido oggi. Tecnico serio e affidabile.</p>
-
-<a class="btn call" href="tel:+393505223388">📞 CHIAMA SUBITO</a>
-<a class="btn whatsapp" href="https://wa.me/393505223388?text=Ho%20un%20guasto%20elettrico%20urgente%20a%20Roma%20Sud.%20Puoi%20intervenire%20oggi?">💬 WhatsApp Risposta Immediata</a>
-</div>
-
-<section>
-<h2>🔧 Problemi che risolvo subito</h2>
-<ul>
-<li>• Salvavita che scatta continuamente</li>
-<li>• Blackout o corto circuito</li>
-<li>• Prese e luci non funzionano</li>
-<li>• Quadri elettrici e linee guaste</li>
-<li>• Piccoli interventi domestici urgenti</li>
-</ul>
-
-<div class="zone">
-📍 Operativo a EUR, Ostia, Acilia, Laurentina, Torrino, Mezzocammino, Fiumicino e zone limitrofe
-</div>
-</section>
-
-<section>
-<h2>⭐ Clienti Reali</h2>
-<div class="review">⭐⭐⭐⭐⭐ Arrivato in 40 minuti, problema risolto subito – Marco EUR</div>
-<div class="review">⭐⭐⭐⭐⭐ Tecnico serio, niente sorprese sul prezzo – Laura Ostia</div>
-<div class="review">⭐⭐⭐⭐⭐ Salvavita sistemato in mezz’ora – Paolo Acilia</div>
-</section>
-
-<section>
-<h2>💰 Costo Intervento</h2>
-<p>👉 Chiamata + diagnosi guasto: <b>30€</b> (poi preventivo chiaro)</p>
-<a class="btn preventivo" href="https://wa.me/393505223388?text=Vorrei%20un%20preventivo%20per%20un%20guasto%20elettrico%20a%20Roma%20Sud">Richiedi Preventivo</a>
-</section>
-
-<footer>
-DomusTech Roma • Tel 3505223388 • domustech.roma@gmail.com<br>
-Tecnico elettrico indipendente • Interventi su appuntamento
-</footer>
-
-<!-- Pulsanti fissi -->
-<a class="fixed-wa" href="https://wa.me/393505223388?text=Ho%20un%20guasto%20elettrico%20urgente%20a%20Roma%20Sud.%20Puoi%20intervenire%20oggi?">WhatsApp</a>
-<a class="fixed-call" href="tel:+393505223388">Chiama</a>
+<script>
+    // Codice per rendere l'esperienza fluida se necessario
+</script>
 
 </body>
 </html>
