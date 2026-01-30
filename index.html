@@ -20,6 +20,23 @@
     </script>
 
     <script>
+    function gtag_report_call_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17909499498/h72nCI-o2e8bEOqM9dtC',
+          'value': 1.0,
+          'currency': 'EUR',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
+    <script>
     function gtag_report_wa_conversion(url) {
       var callback = function () {
         if (typeof(url) != 'undefined') {
@@ -43,41 +60,29 @@
         }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { margin: 0; font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
-        
         .top-banner { background: var(--danger); color: white; text-align: center; padding: 10px; font-weight: 800; font-size: 14px; position: sticky; top: 0; z-index: 1000; }
-        
         .hero { background: white; padding: 30px 20px; text-align: center; border-bottom: 5px solid var(--accent); }
         .hero-img { width: 100%; max-width: 500px; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 20px; border: 4px solid #fff; }
         .hero h1 { font-size: 1.8rem; margin: 0; color: var(--primary); font-weight: 800; line-height: 1.2; }
         .hero p { font-size: 1.1rem; margin: 15px 0 25px; color: #475569; }
-
         .cta-container { display: grid; gap: 12px; max-width: 400px; margin: 0 auto; }
         .btn { padding: 18px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 10px; color: white; border: none; }
         .btn-call { background: var(--primary); }
         .btn-wa { background: var(--success); }
-
         .container { max-width: 800px; margin: auto; padding: 30px 20px; }
-
-        /* Recensioni migliorate */
         .section-title { text-align: center; font-weight: 800; font-size: 1.4rem; margin: 40px 0 20px; color: var(--primary); }
         .review-card { background: white; padding: 20px; border-radius: 15px; margin-bottom: 20px; border: 1px solid #e2e8f0; position: relative; }
         .review-card::before { content: "⭐⭐⭐⭐⭐"; display: block; margin-bottom: 8px; font-size: 12px; }
         .rev-text { font-style: italic; color: #334155; font-size: 0.95rem; }
         .rev-name { font-weight: 800; color: var(--text); font-size: 0.85rem; display: block; margin-top: 10px; text-transform: uppercase; }
-
-        /* FAQ */
         .faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; margin-bottom: 10px; }
         .faq-q { font-weight: 800; color: var(--primary); margin-bottom: 5px; font-size: 0.95rem; }
         .faq-a { color: #475569; font-size: 0.9rem; }
-
-        /* Rimozione prezzo -> Box Fiducia */
         .trust-box { background: #eef2ff; padding: 25px; border-radius: 20px; text-align: center; margin: 30px 0; border: 2px dashed var(--primary); }
         .trust-box h2 { margin: 0; font-size: 1.3rem; color: var(--primary); }
         .trust-box p { font-weight: 600; margin-top: 5px; color: #3730a3; }
-
         .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; display: flex; padding: 10px; gap: 10px; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); z-index: 2000; }
         .s-btn { flex: 1; padding: 15px; border-radius: 10px; text-decoration: none; text-align: center; font-weight: 800; font-size: 0.85rem; color: white; }
-
         footer { text-align: center; padding: 40px 20px 100px; color: #94a3b8; font-size: 0.75rem; }
         @media (min-width: 601px) { .sticky-bar { display: none; } }
     </style>
@@ -92,7 +97,10 @@
     <p>Tecnico locale specializzato in riparazioni urgenti e messa in sicurezza.</p>
     
     <div class="cta-container">
-        <a href="tel:+393505223388" class="btn btn-call">📞 CHIAMA ORA</a>
+        <a href="tel:+393505223388" 
+           onclick="return gtag_report_call_conversion('tel:+393505223388');" 
+           class="btn btn-call">📞 CHIAMA ORA</a>
+        
         <a href="https://wa.me/393505223388?text=Ciao,%20ho%20un%20guasto%20elettrico..." 
            onclick="return gtag_report_wa_conversion('https://wa.me/393505223388');" 
            class="btn btn-wa">💬 WHATSAPP</a>
@@ -100,7 +108,6 @@
 </section>
 
 <div class="container">
-
     <div class="trust-box">
         <h2>Preventivi Trasparenti</h2>
         <p>Valutiamo il guasto e concordiamo il prezzo prima di iniziare. <br>Nessuna sorpresa in fattura.</p>
@@ -129,12 +136,6 @@
         <div class="faq-q">Lavori anche di sabato o domenica?</div>
         <div class="faq-a">Sì, il servizio di pronto intervento è attivo h24, inclusi i giorni festivi e i fine settimana.</div>
     </div>
-
-    <div class="faq-item">
-        <div class="faq-q">Quanto costa l'uscita?</div>
-        <div class="faq-a">Preferiamo valutare il problema caso per caso. Una volta sul posto, identifichiamo il guasto e ti comunichiamo il costo esatto della riparazione prima di procedere.</div>
-    </div>
-
 </div>
 
 <footer>
@@ -144,7 +145,10 @@
 </footer>
 
 <div class="sticky-bar">
-    <a href="tel:+393505223388" class="s-btn" style="background:var(--primary)">CHIAMA</a>
+    <a href="tel:+393505223388" 
+       onclick="return gtag_report_call_conversion('tel:+393505223388');" 
+       class="s-btn" style="background:var(--primary)">CHIAMA</a>
+    
     <a href="https://wa.me/393505223388" 
        onclick="return gtag_report_wa_conversion('https://wa.me/393505223388');" 
        class="s-btn" style="background:var(--success)">WHATSAPP</a>
